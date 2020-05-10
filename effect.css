@@ -1,0 +1,58 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.box {
+  position: relative;
+  cursor: pointer;
+  width: 200px;
+  height: 200px;
+  /* overflow: hidden; */
+  background-image: url(https://images.unsplash.com/photo-1589032774336-ae4685e0d7fc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60);
+  background-position: center;
+  color: white;
+  transition: height 0.6s, width 0.6s 0.6s, background 0.5s;
+}
+
+.top {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateX(-1000px);
+  transition: transform 1s;
+}
+
+.bottom {
+  position: absolute;
+  bottom: 0;
+  transform: translateX(1000px);
+  transition: transform 1s;
+}
+
+.opening {
+  width: 500px;
+  height: 500px;
+}
+
+.open > * {
+  transform: translateX(0);
+  /* transition: transform 1s; */
+}
+
+.image {
+  background-image: url(https://images.unsplash.com/photo-1588831275566-97afc9f18278?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60);
+}
+
+.box:hover {
+}

@@ -14,4 +14,5 @@ link.addEventListener("click", function () {
   }
   pdv = pdv - 10;
   vieHTML.textContent = pdv;
+  console.log(pdv);
 });
