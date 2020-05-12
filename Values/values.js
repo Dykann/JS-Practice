@@ -18,10 +18,11 @@ malboroPrix.textContent = malboro.prix;
 
 const morris = cigarettes[1];
 const morrisPrix = document.querySelector(".philip-morris .prix");
+console.log(morrisPrix);
 morrisPrix.textContent = morris.prix;
 
 const strikePrix = document.querySelector(".lucky-strike .prix");
-
+console.log(strikePrix);
 strikePrix.textContent = cigarettes[2].prix;
 
 const malboroStock = document.querySelector(".malboro .stock");
