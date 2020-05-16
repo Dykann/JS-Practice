@@ -6,5 +6,35 @@
     <script src="main.js" async></script>
     <title>Document</title>
   </head>
-  <body></body>
+  <body>
+    <h1>(1) Class</h1>
+    <p>
+      class Khaov {<br />
+      constructor(prenom, age) {<br />
+      this.prenom = prenom; <br />
+      this.age = age; }<br />
+      } <br />
+      const Titi = new Khaov("Titi", 21);
+    </p>
+    <hr />
+    <h1>(2) Class extends</h1>
+    <p>
+      class Khaov extends Human { <br />
+      constructor(name) { <br />
+      super(name); <br />
+      this.city = "Plaisir"; } }
+    </p>
+    <hr />
+
+    <h1>(3) Customiser classes</h1>
+    <p>
+      class MovieCollection extends Array { <br />
+      constructor(...movies) { <br />
+      super(...movies); <br />
+      }
+      <br />
+      addMovies(movie) { return this.push(movie); } <br />
+      }
+    </p>
+  </body>
 </html>
