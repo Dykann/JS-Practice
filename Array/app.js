@@ -1,4 +1,4 @@
-//MAP
+//  MAP method
 
 const clientUl = document.querySelector(".clients");
 
