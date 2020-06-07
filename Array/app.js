@@ -8,35 +8,37 @@ const capitainClient = clients.map((client) => {
   return `${client} capitain`;
 });
 
-console.log(capitainClient);
+// const clientsMap = clients
+//   .map((client) => {
+//     if (client === "issou") return `<h1>${client}</h1>`;
+//     return `<p>${client}</p>`;
+//   })
+//   .join("");
 
-const clientsMap = clients
-  .map((client) => {
-    if (client === "issou") return `<h1>${client}</h1>`;
-    return `<p>${client}</p>`;
-  })
-  .join("");
+// JAMAIS INNERHTML
+// clientUl.innerHTML = clientsMap;
 
-// console.log(clientsMap);
+clients.forEach(function (client) {
+  const p = document.createElement("p");
+  p.innerText = `client : ${client}`;
+  clientUl.appendChild(p);
+});
 
-clientUl.innerHTML = clientsMap;
 ////////////////////////////////////////
-const ching = document.querySelector(".ching");
-const listeChing = ["kahn", "kev", "celine", "elodie", "iley", "kk"];
-
-const chingHTML = listeChing
-  .map((membre) => {
-    if (membre === "kahn" || membre === "iley")
-      return `<li class="blue">${membre}</li>`;
-    if (membre === "elodie") return `<li class="yellow">${membre}</li>`;
-    return `<li class="red">${membre}</li>`;
-  })
-  .join("");
+const chingUl = document.querySelector(".ching");
+const listeChing = ["kahn", "kev", "celine", "elodie", "iley"];
 
 // console.log(chingHTML);
 
 const btn = document.querySelector("button");
 
 btn.addEventListener("click", () => {
-  ching.innerHTML = chingHTML;
+  if (chingUl.childNodes.length > 0) {
+    return;
+  }
+  listeChing.forEach(function (ching) {
+    const li = document.createElement("li");
+    li.innerText = `${ching} ching`;
+    chingUl.appendChild(li);
+  });
 });
