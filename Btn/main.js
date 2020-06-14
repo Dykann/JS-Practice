@@ -1,9 +1,9 @@
 const btn = document.querySelector("button");
 
 const handleClick = function () {
+  btn.classList.toggle("open");
   btn.textContent = "Aurevoir";
-  btn.style.backgroundColor = "red";
-  document.body.style.backgroundColor = "coral";
+  btn.style.backgroundColor = "grey";
 };
 
 btn.addEventListener("click", handleClick);
@@ -18,4 +18,4 @@ function maths(a, b, c) {
   }
 }
 
-console.log(maths(20, 1, 1));
+console.log(maths(5, 5, 5));

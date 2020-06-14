@@ -1,0 +1,30 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: coral;
+}
+button {
+  padding: 12px;
+  border-radius: 5px;
+  background-color: grey;
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+.open {
+  border-radius: 1000000px;
+  width: 500px;
+  height: 500px;
+  border: 1px solid black;
+}
