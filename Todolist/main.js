@@ -1,34 +1,57 @@
 const newTodoForm = document.querySelector(".new-todo-form");
-const todos = document.querySelector(".todos");
+const todosUl = document.querySelector(".todos");
 
-const addNewTodo = function (event) {
+const todos = [
+  { id: 1, name: "Do my homework" },
+  { id: 2, name: "Commit of the day" },
+];
+
+const addNewTodo = (event) => {
   event.preventDefault();
-  const [input] = event.target.elements;
+  const input = event.target.elements[0];
   const taskName = input.value;
-  createTaskHTML(taskName);
-  input.value = "";
+  const newTodo = {
+    id: Date.now(),
+    name: taskName,
+  };
+  todos.push(newTodo);
+  updateHTML();
 };
 
-const createTaskHTML = function (value) {
-  const todo = document.createElement("li");
-  todo.classList.add("todo");
+const updateHTML = () => {
+  todosUl.innerHTML = "";
 
-  const input = document.createElement("input");
-  input.setAttribute("type", "checkbox");
+  todos.forEach(function (todo) {
+    const li = document.createElement("li");
+    li.classList.add("todo");
+    li.setAttribute("data-id", todo.id);
 
-  const span = document.createElement("span");
-  span.classList.add("todo-task");
-  span.innerText = value;
+    const input = document.createElement("input");
+    input.setAttribute("type", "checkbox");
 
-  const btn = document.createElement("button");
-  btn.classList.add("todo-btn-delete");
-  btn.innerText = "X";
+    const span = document.createElement("span");
+    span.classList.add("todo-task");
+    span.innerText = todo.name;
 
-  todo.appendChild(input);
-  todo.appendChild(span);
-  todo.appendChild(btn);
+    const btn = document.createElement("button");
+    btn.classList.add("todo-btn-delete");
+    btn.textContent = "X";
+    btn.addEventListener("click", deleteTodo);
 
-  todos.appendChild(todo);
+    li.appendChild(input);
+    li.appendChild(span);
+    li.appendChild(btn);
+    todosUl.appendChild(li);
+  });
+};
+
+const deleteTodo = (event) => {
+  delete todos.find(function (todo) {
+    todo.id === event.target.parentElement.dataset.id;
+  });
+  console.log(todos);
+  event.target.parentElement.remove();
 };
 
 newTodoForm.addEventListener("submit", addNewTodo);
+updateHTML();
