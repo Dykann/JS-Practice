@@ -1,7 +1,7 @@
 const newTodoForm = document.querySelector(".new-todo-form");
 const todosUl = document.querySelector(".todos");
 
-const todos = [
+const todosDatabase = [
   { id: 1, name: "Do my homework" },
   { id: 2, name: "Commit of the day" },
 ];
@@ -10,47 +10,43 @@ const addNewTodo = (event) => {
   event.preventDefault();
   const input = event.target.elements[0];
   const taskName = input.value;
+  if (taskName === "") return;
   const newTodo = {
     id: Date.now(),
     name: taskName,
   };
-  todos.push(newTodo);
+  todosDatabase.push(newTodo);
+  updateHTML();
+  input.value = "";
+};
+
+const deleteTodo = function (event) {
+  const id = event.target.parentElement.dataset.id;
+  const todoIndex = todosDatabase.findIndex(function (todo) {
+    return todo.id === parseInt(id);
+  });
+  todosDatabase.splice(todoIndex, 1);
   updateHTML();
 };
 
 const updateHTML = () => {
-  todosUl.innerHTML = "";
+  const todosHTML = todosDatabase
+    .map(function (todo) {
+      return `<li class="todo" data-id="${todo.id}">
+      <input type="checkbox">
+      <span class="todo-task">${todo.name}</span>
+      <button class="todo-btn-delete">X</button>
+      </li>`;
+    })
+    .join("");
+  todosUl.innerHTML = todosHTML;
 
-  todos.forEach(function (todo) {
-    const li = document.createElement("li");
-    li.classList.add("todo");
-    li.setAttribute("data-id", todo.id);
+  const buttons = document.querySelectorAll(".todo-btn-delete");
 
-    const input = document.createElement("input");
-    input.setAttribute("type", "checkbox");
-
-    const span = document.createElement("span");
-    span.classList.add("todo-task");
-    span.innerText = todo.name;
-
-    const btn = document.createElement("button");
-    btn.classList.add("todo-btn-delete");
-    btn.textContent = "X";
-    btn.addEventListener("click", deleteTodo);
-
-    li.appendChild(input);
-    li.appendChild(span);
-    li.appendChild(btn);
-    todosUl.appendChild(li);
+  buttons.forEach(function (button) {
+    button.addEventListener("click", deleteTodo);
   });
-};
-
-const deleteTodo = (event) => {
-  delete todos.find(function (todo) {
-    todo.id === event.target.parentElement.dataset.id;
-  });
-  console.log(todos);
-  event.target.parentElement.remove();
+  console.log(todosDatabase);
 };
 
 newTodoForm.addEventListener("submit", addNewTodo);
