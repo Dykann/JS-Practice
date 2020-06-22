@@ -1,10 +1,8 @@
 const newTodoForm = document.querySelector(".new-todo-form");
 const todosUl = document.querySelector(".todos");
+const btnClearAll = document.querySelector(".btn-clear-all");
 
-const todosDatabase = [
-  { id: 1, name: "Do my homework" },
-  { id: 2, name: "Commit of the day" },
-];
+const todosDatabase = JSON.parse(localStorage.getItem("todosDatabase")) || [];
 
 const addNewTodo = (event) => {
   event.preventDefault();
@@ -16,6 +14,7 @@ const addNewTodo = (event) => {
     name: taskName,
   };
   todosDatabase.push(newTodo);
+  localStorage.setItem("todosDatabase", JSON.stringify(todosDatabase));
   updateHTML();
   input.value = "";
 };
@@ -26,6 +25,7 @@ const deleteTodo = function (event) {
     return todo.id === parseInt(id);
   });
   todosDatabase.splice(todoIndex, 1);
+  localStorage.setItem("todosDatabase", JSON.stringify(todosDatabase));
   updateHTML();
 };
 
@@ -51,3 +51,9 @@ const updateHTML = () => {
 
 newTodoForm.addEventListener("submit", addNewTodo);
 updateHTML();
+
+btnClearAll.addEventListener("click", function () {
+  localStorage.clear();
+  todosDatabase.length = 0;
+  updateHTML();
+});

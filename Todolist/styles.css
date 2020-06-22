@@ -14,6 +14,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   min-height: 100vh;
 }
 
@@ -47,4 +48,12 @@ input[type="text"],
 
 input[type="checkbox"]:checked + .todo-task {
   text-decoration: line-through;
+}
+
+button {
+  cursor: pointer;
+}
+.btn-clear-all {
+  padding: 4px;
+  margin-top: 32px;
 }
