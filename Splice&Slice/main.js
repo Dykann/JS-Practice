@@ -20,8 +20,8 @@ console.log(nonMutatingSlice(inputCars));
 
 const btn = document.querySelector("button");
 
-btn.addEventListener("click", function (e) {
-  console.log(e);
-  document.body.classList.toggle("red");
-  btn.classList.toggle("yellow");
+btn.addEventListener("click", function () {
+  document.body.classList.toggle("backgroundColor");
+  btn.classList.toggle("btn-style");
+  btn.classList.toggle("transition");
 });
