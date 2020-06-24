@@ -1,0 +1,59 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.todolist {
+  padding: 16px 12px 48px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+input[type="text"],
+.btn-submit {
+  padding: 4px 12px;
+  outline: none;
+}
+
+.todo {
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid gray;
+}
+
+.todo:nth-child(even) {
+  background-color: lightgray;
+}
+
+.todo-task {
+  margin-left: 8px;
+  flex: 1;
+}
+
+input[type="checkbox"]:checked + .todo-task {
+  text-decoration: line-through;
+}
+
+button {
+  cursor: pointer;
+}
+.btn-clear-all {
+  padding: 4px;
+  margin-top: 32px;
+}
