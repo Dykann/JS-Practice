@@ -7,8 +7,9 @@ function cc(card) {
     case 4:
     case 5:
     case 6:
+      console.log("je suis dans le case");
       count++;
-      break;
+      return;
     case 10:
     case "J":
     case "Q":
@@ -31,4 +32,7 @@ cc(3);
 cc(7);
 cc("K");
 cc("A");
-console.log(cc(1));
+console.log(cc("J"));
+console.log(cc("Q"));
+console.log(cc("K"));
+console.log(cc("A"));
