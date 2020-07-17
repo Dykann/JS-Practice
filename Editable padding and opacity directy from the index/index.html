@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="main.js" async></script>
+    <style>
+      :root {
+        --blur: 0.8;
+        --spacing: 0;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .rect {
+        padding: var(--spacing);
+        width: 500px;
+        height: 500px;
+        background-color: coral;
+        opacity: var(--blur);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="rect"></div>
+    <div>
+      <label for="blur">Blur</label>
+      <input type="range" name="blur" id="blur" min="0" max="10" value="8" />
+    </div>
+    <div>
+      <label for="spacing">Spacing</label>
+      <input
+        type="range"
+        name="spacing"
+        id="spacing"
+        min="0"
+        max="100"
+        value="0"
+      />
+    </div>
+  </body>
+</html>
