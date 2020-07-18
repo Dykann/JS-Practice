@@ -2,7 +2,7 @@ const title = document.querySelector("h1");
 
 const letterArray = [...title.textContent];
 
-// console.log(letterArray);
+console.log(letterArray);
 
 const spans = letterArray
   .map(function (letter) {
