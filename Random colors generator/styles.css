@@ -11,12 +11,46 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  color: #212;
+  overflow: hidden;
 }
+
 button {
+  background-color: rgba(203, 203, 203, 0.927);
   border-radius: 100000000px;
   padding: 8px;
   cursor: pointer;
   outline: none;
+  border: none;
+}
+
+button::before {
+  position: absolute;
+  transform: translate(-1000px, -40px);
+  content: "Hi";
+  color: green;
+  font-weight: bold;
+  transition: all 1.5s;
+}
+
+button::after {
+  position: absolute;
+  transform: translate(1000px, 50px);
+  content: "Bye";
+  color: blue;
+  font-weight: bold;
+  transition: all 1.5s;
+}
+
+.transition::before {
+  position: absolute;
+  transform: translate(-8px, -40px);
+}
+
+.transition::after {
+  position: absolute;
+  transform: translate(-15px, 40px);
+}
+
+.btn-style {
   border: none;
 }
