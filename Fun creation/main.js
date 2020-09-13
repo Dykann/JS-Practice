@@ -1,5 +1,4 @@
 const title = document.querySelector("h1");
-
 const letterArray = [...title.textContent];
 
 console.log(letterArray);
@@ -11,11 +10,3 @@ const spans = letterArray
   .join("");
 
 title.innerHTML = spans;
-
-Array.prototype.salut = function () {
-  console.log("salut");
-};
-
-const khaov = ["titi", "tony", "rene", "papa", "maman", "lara", "mystic"];
-const dogs = khaov.slice(5, 7);
-console.log(dogs);
