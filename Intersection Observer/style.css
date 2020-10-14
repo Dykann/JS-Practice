@@ -1,0 +1,45 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin-top: 150px;
+  margin-bottom: 300px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+
+img {
+  height: 250px;
+  width: 500px;
+  opacity: 0;
+  margin-bottom: 120px;
+  transform: translate3d(-505px, 0px, 0px);
+  transition: transform 400ms ease, opacity 400ms ease;
+}
+
+.firstImg {
+  height: 250px;
+  width: 500px;
+  opacity: 0;
+  margin-bottom: 120px;
+  transform: translate3d(-505px, 0px, 0px);
+  transition: transform 3000ms ease, opacity 3000ms ease;
+}
+
+.active {
+  opacity: 1;
+  transform: translate3d(0px, 0px, 0px);
+}
