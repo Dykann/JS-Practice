@@ -36,7 +36,7 @@ img {
   opacity: 0;
   margin-bottom: 120px;
   transform: translate3d(-505px, 0px, 0px);
-  transition: transform 3000ms ease, opacity 3000ms ease;
+  transition: transform 1200ms ease, opacity 1200ms ease;
 }
 
 .active {
