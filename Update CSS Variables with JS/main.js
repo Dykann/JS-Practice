@@ -1,8 +1,5 @@
 const inputBlur = document.querySelector("input[name=blur]");
 
-inputBlur.addEventListener("change", changeBlur);
-inputBlur.addEventListener("mousemove", changeBlur);
-
 function changeBlur(event) {
   return document.documentElement.style.setProperty(
     `--blur`,
@@ -10,10 +7,10 @@ function changeBlur(event) {
   );
 }
 
-const inputSpacing = document.querySelector("input[name=spacing]");
+inputBlur.addEventListener("change", changeBlur);
+inputBlur.addEventListener("mousemove", changeBlur);
 
-inputSpacing.addEventListener("change", changeSpacing);
-inputSpacing.addEventListener("mousemove", changeSpacing);
+const inputSpacing = document.querySelector("input[name=spacing]");
 
 function changeSpacing(event) {
   return document.documentElement.style.setProperty(
@@ -21,3 +18,6 @@ function changeSpacing(event) {
     event.target.value + "px"
   );
 }
+
+inputSpacing.addEventListener("change", changeSpacing);
+inputSpacing.addEventListener("mousemove", changeSpacing);
