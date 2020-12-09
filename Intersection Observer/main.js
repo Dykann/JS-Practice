@@ -4,7 +4,7 @@ function PageTransition() {
   firstImg.classList.add("active");
 }
 
-firstImg.addEventListener("load", PageTransition);
+window.addEventListener("load", PageTransition);
 
 const images = document.querySelectorAll(".img");
 
