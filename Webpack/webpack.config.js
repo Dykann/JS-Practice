@@ -5,6 +5,6 @@ module.exports = {
   entry: "./src/main.js",
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "titi.bundle.js",
+    filename: "mysticlala.bundle.js",
   },
 };
