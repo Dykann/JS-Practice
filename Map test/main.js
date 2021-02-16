@@ -1,4 +1,5 @@
 const container = document.querySelector(".container");
+
 const carIdentificationFields = [
   {
     name: "registrationNumber",
